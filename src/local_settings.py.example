@@ -1,0 +1,10 @@
+DEBUG = True
+LOCAL_SERVE = True
+SECRET_KEY = 'dev'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'design_credit.sqlite',
+    }
+}
