@@ -17,6 +17,9 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+
+    # Temp Hello World, you can delete this
+    (r'^$', 'django.views.generic.simple.direct_to_template', {'template':'hello-world.html'}),
 )
 
 if getattr(settings, 'LOCAL_SERVE', False):
