@@ -3,6 +3,7 @@ import os, sys
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.defaults import *
+from src import views
 
 
 admin.autodiscover()
@@ -18,8 +19,10 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
 
-    # Temp Hello World, you can delete this
-    (r'^$', 'django.views.generic.simple.direct_to_template', {'template':'hello-world.html'}),
+     (r'^home/$', 'src.views.home_page'),
+     # (r'^results/$', 'BBoxHW.views.results_page'),
+     (r'^addnewdesigner/thanks/$', 'src.views.thankyou_page'),
+     (r'^addnewdesigner/$', 'src.views.AddDesigner'),
 )
 
 if getattr(settings, 'LOCAL_SERVE', False):

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Add New Designer{% endblock %}
+{% block content %}
+
+<div id="boxshadow">
+		<div id="addtoform">
+			<p>
+				Please enter: The name of the web designer, The designer's portfolio website
+				and The website this created
+			</p>
+			<br />
+			<div class="input">
+				<form method="POST" action="">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<input type="submit" value="Add" class="button blue"/>
+					<br />
+					<br />
+				</form>
+			</div>
+	</div>
+</div>
+{% endblock %}
