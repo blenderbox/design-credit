@@ -1,18 +1,13 @@
 from django import forms
 import re, sys, string
 
-
 class AddNewDesignerForm(forms.Form):
     name = forms.CharField(max_length=100)
     designer_url = forms.URLField(max_length=100)
     website_designed = forms.URLField(max_length=100)
-  
-class SearchWebsiteForm(forms.Form):
-    website_designed = forms.CharField(max_length=100)
         
 def sanitizeUrl(website, Strict=None):
 
-    # strings = re.split(r"([^\-a-zA-Z0-9_]+)",link)[:-1]
     strings = re.split(r"([^\-a-zA-Z0-9_]+)",website)
 
     if not strings:

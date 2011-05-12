@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
 
-     (r'^home/$', 'intern.views.home_page'),
+     (r'^home/$', 'intern.views.search_designer'),
      (r'^addnewdesigner/thanks/$', 'intern.views.thankyou_page'),
      (r'^addnewdesigner/$', 'intern.views.AddDesigner'),
 )

@@ -5,10 +5,6 @@ from django.http import HttpResponseRedirect, HttpResponse
 from models import WebDesigner
 from form import sanitizeUrl, AddNewDesignerForm, SearchWebsiteForm
 
-def home_page(request):
-    return render_to_response("home.html",
-            context_instance=RequestContext(request))
-
 def thankyou_page(request):
     return render_to_response("thankyou.html",
             context_instance=RequestContext(request))
