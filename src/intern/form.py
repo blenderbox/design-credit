@@ -17,8 +17,8 @@ def sanitizeUrl(website, Strict=None):
         if strings[1] == "://":
             if Strict:                
                 if "." in strings[2:]:
-                    return "".join(strings[2:])  # it's valid!
+                    return "".join(strings[2:len(strings)-1])  # it's valid!
             else:
-                return "".join(strings[2:])
+                return "".join(strings[2:len(strings)-1])
     else:
         return website
