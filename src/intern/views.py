@@ -27,7 +27,12 @@ def AddDesigner(request):
         form = AddNewDesignerForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             clean = form.cleaned_data
-            developer = WebDesigner(designer=clean['name'],sanitizeUrl(designer_url=clean['designer_url']),website_designed = sanitizeUrl(clean['website_designed']))
+            designer=clean['name']
+            designer_url=clean['designer_url']
+            designer_url=sanitizeUrl(designer_url)
+            website_designed = clean['website_designed']
+            website_designed = sanitizeUrl(website_designed)
+            developer = WebDesigner(designer,designer_url,website_designed)
             developer.save()
             return HttpResponseRedirect("thanks") # Redirect after POST
     else:
