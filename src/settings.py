@@ -99,7 +99,7 @@ ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = ()
 for root, dirs, files in os.walk(PROJECT_PATH):
-    if 'templates' in dirs: TEMPLATE_DIRS += (os.path.join(root, 'templates'),)
+    if 'templates' in dirs: TEMPLATE_DIRS += (os.path.join(root, 'intern/templates'),)
 
 INSTALLED_APPS = (
     # Django Applications
