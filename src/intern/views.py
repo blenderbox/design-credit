@@ -3,7 +3,7 @@ from django.template import RequestContext, Context, loader
 from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from models import WebDesigner
-from form import sanitizeUrl, AddNewDesignerForm, SearchWebsiteForm
+from form import sanitizeUrl, AddNewDesignerForm
 
 def thankyou_page(request):
     return render_to_response("thankyou.html",
