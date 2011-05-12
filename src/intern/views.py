@@ -28,7 +28,9 @@ def AddDesigner(request):
         if form.is_valid(): # All validation rules pass
             clean = form.cleaned_data
             designer=clean['name']
+            convert to string
             designer_url=clean['designer_url']
+            designer_url = str(designer_url)
             designer_url=sanitizeUrl(designer_url)
             website_designed = clean['website_designed']
             website_designed = sanitizeUrl(website_designed)
