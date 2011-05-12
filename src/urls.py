@@ -3,7 +3,7 @@ import os, sys
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.defaults import *
-from src import views
+from intern import views
 
 
 admin.autodiscover()
@@ -19,9 +19,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
 
-     (r'^home/$', 'src.views.home_page'),
-     (r'^addnewdesigner/thanks/$', 'src.views.thankyou_page'),
-     (r'^addnewdesigner/$', 'src.views.AddDesigner'),
+     (r'^home/$', 'intern.views.home_page'),
+     (r'^addnewdesigner/thanks/$', 'intern.views.thankyou_page'),
+     (r'^addnewdesigner/$', 'intern.views.AddDesigner'),
 )
 
 if getattr(settings, 'LOCAL_SERVE', False):

@@ -22,7 +22,7 @@ def search_designer(request):
     website = sanitizeUrl(website)
     if website:
 	results = WebDesigner.objects.filter(website_designed = website)
-    	return render_to_response('results',{'results':results},context_instance=RequestContext(request))
+    	return render_to_response("results.html",{'results':results},context_instance=RequestContext(request))
     else:
 	return render_to_response('home.html',context_instance=RequestContext(request))
 	
@@ -33,9 +33,9 @@ def AddDesigner(request):
             clean = form.cleaned_data
             developer = WebDesigner(designer=clean['name'],designer_url=clean['designer_url'],website_designed = clean['website_designed'])
             developer.save()
-            return HttpResponseRedirect('thanks') # Redirect after POST
+            return HttpResponseRedirect("thanks") # Redirect after POST
     else:
         form = AddNewDesignerForm() # An unbound form
 
-    return render_to_response('Add_New_Designer.html', {'form': form,},
+    return render_to_response("Add_New_Designer.html", {'form': form,},
                               context_instance=RequestContext(request))
