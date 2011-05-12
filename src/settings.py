@@ -115,7 +115,7 @@ INSTALLED_APPS = (
     # Third Party Django Applications
 
     # Project Applications
-    'django'
+    'intern'
 )
 
 TEMPLATE_TAGS = (

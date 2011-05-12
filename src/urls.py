@@ -20,7 +20,6 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
      (r'^home/$', 'src.views.home_page'),
-     # (r'^results/$', 'BBoxHW.views.results_page'),
      (r'^addnewdesigner/thanks/$', 'src.views.thankyou_page'),
      (r'^addnewdesigner/$', 'src.views.AddDesigner'),
 )

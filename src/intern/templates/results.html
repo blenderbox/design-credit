@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+
+{% block message %}
+<p>
+	Total found {{results|length}} results:
+</p>
+{% endblock %}
+
+{% if results %}
+
+{% for result in results %}
+
+<p align="center">
+	<a href="{{result.website_designed}}">{{results.website_designed}}</a> was designed by
+	<a href="{{result.designer_url}}">{{result.designer}}</a>
+</p>
+<br/>
+
+{% endfor %}
+<p align="center">
+	<a href="/home/">New Search</a>
+</p>
+{% endif %}
+
+{% if not results %}
+<p align="center">
+	It appears we don't have the developer of this website in our database.
+	<br/>
+	If you know the developer of this website you have the
+	<br/>
+	option of adding this developer.
+	<br/>
+	Click the link below to begin.
+</p>
+<p align="center">
+	<a href="/addnewdesigner/">Add new Web Designer</a>
+</p>
+{% endif %}
+{% endblock %}
